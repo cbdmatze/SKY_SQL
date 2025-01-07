@@ -870,34 +870,53 @@ class FlightData:
 
     >>> We suggest creating a seperate Python file for the plotting functionality.
 
-
-'''
-
-
-
-🛫 
+    
+🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 
+                                                    🛫_Bonus - API this!_🛫 
+🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 
 
 
-🛫 
+🛫  One of the beautiful things about modern development is the use of Layers(or Abstraction), which allows for any part
+    of a program to be wrapped with different or multiple layers.
 
 
-🛫 
+🛫  In the upcoming step, you will add another interface to your flights data tool - you will create a whole new 'FLIGHTS API' !!
 
 
 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 
-🛫__🛫 
+                                                    🛫_😮 But how?_🛫 
 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 🛫 
 
-🛫 
+
+🛫  This should be really simple - we are essentially adding another interface that will utilize the same data access layer. 
+    If this magic works as intended, you won't need to change 'a single line of code' within 'data.py'!!
 
 
-🛫 
+🛫  What you need to do is create a second interface file (like 'main.py') that will run a Flask application to expose API endpoints.
+    The Flask app will use the data object in the same way as the original tool.
 
 
-🛫 
+🛫  With your new API, a whole new range of users from around the globe will be able to access your information through HTTP requests!!!
+    Isn't that cool?
 
 
-🛫 
+🛫  INSTRUCTIONS
+
+    Wait a minute, you 'already know' how to do all of this!!
+
+    >>> All you have to first is define your new API::--
+
+        >>> Which endpoints will it contain?
+
+        >>> For each endpoint, what is the HTTP Method and parameters needed?
+
+        >>> Make sure the format of the returned data is JSON.
+
+            >>> Once you have your plan, nothing will stop you!!
+
+    Good Luck!!
+
+
 
 
 🛫 
