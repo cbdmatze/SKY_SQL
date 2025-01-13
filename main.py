@@ -1,4 +1,4 @@
-import data 
+import data
 import plot
 from datetime import datetime
 
@@ -8,8 +8,8 @@ IATA_LENGTH = 3
 
 def delayed_flights_by_airline(data_manager):
     """
-    Prompts the user to input an airline name, retrieves delayd flights for that airline using
-    the data manager, and prints the results. If resutlts are found, a plot of flight delays is generated.
+    Prompts the user to input an airline name, retrieves delayed flights for that airline using
+    the data manager, and prints the results. If results are found, a plot of flight delays is generated.
 
     Args:
         data_manager(FlightData): Instance of the FlightData class to interact with the database.
@@ -19,7 +19,9 @@ def delayed_flights_by_airline(data_manager):
     print_results(results)
     if results:
         plot.plot_flight_delays_by_airline(results)
-    
+    else:
+        print("No delays found for this airline.")
+
 
 def delayed_flights_by_airport(data_manager):
     """
@@ -27,23 +29,25 @@ def delayed_flights_by_airport(data_manager):
     airport using the data manager, and prints the results. If results are found, a plot of flight delays is generated.
     
     Args:
-            data_manager (FlightData): Instance of the FlightData class to interact with the database.
+        data_manager (FlightData): Instance of the FlightData class to interact with the database.
     """
     valid = False
     while not valid:
-        airport_input = input("Enter origin airpost IATA code: ")
+        airport_input = input("Enter origin airport IATA code: ")
         if airport_input.isalpha() and len(airport_input) == IATA_LENGTH:
             valid = True
     results = data_manager.get_delayed_flights_by_airport(airport_input)
     print_results(results)
     if results:
         plot.plot_flight_delays_by_airport(results)
+    else:
+        print("No delays found for this airport.")
 
 
 def flight_by_id(data_manager):
     """
     Prompts the user to input a flight ID, retrieves the flight details for that ID using 
-    the data manager, and prints the reults.
+    the data manager, and prints the results.
     
     Args:
         data_manager (FlightData): Instance of the FlightData class to interact with the database.
@@ -78,10 +82,12 @@ def flights_by_date(data_manager):
         else:
             valid = True
     
-    results = data_manage.get_flights_by_date(date.day, date.month, date.year)
+    results = data_manager.get_flights_by_date(date.day, date.month, date.year)
     print_results(results)
     if results:
         plot.plot_flights_by_date(results)
+    else:
+        print("No flights found for this date.")
 
 
 def print_results(results):
@@ -115,14 +121,14 @@ def show_menu_and_get_input():
     Displays a menu of options and prompts the user to select one.
     The user can select from several functions related to flight data.
     
-    Returns;
+    Returns:
         function: The function corresponding to the selected menu option.
     """
     print("Menu:")
     for key, value in FUNCTIONS.items():
-        print(f"{key}, {value[1]}")
+        print(f"{key}. {value[1]}")
 
-    while True;
+    while True:
         try:
             choice = int(input())
             if choice in FUNCTIONS:
@@ -140,7 +146,7 @@ FUNCTIONS = {
 }
 
 
-def main();
+def main():
     """
     Main entry point of the program. Initializes the data manager and enters the main menu loop,
     allowing the user to interact with the flight data.
